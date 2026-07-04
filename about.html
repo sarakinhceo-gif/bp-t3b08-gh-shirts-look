@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="bpaas-design-system" content="editorial-apple">
+  <meta name="bpaas-design-theme" content="kr-warm-grid">
+  <meta name="description" content="공항 셔츠룸의 모든 것. 입지, 서비스, 가격, 그리고 진짜 스타일을 원하는 당신을 위한 정보. 지금 확인하세요. 전화: 010-6279-0862">
+  <meta name="keywords" content="공항 셔츠룸, 공항 셔츠룸 정보, 셔츠룸 위치, 셔츠룸 가격, 공항 셔츠룸 서비스, 브로 페르소나">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://t3b08-gh-shirts-look.vercel.app/info">
+  <meta property="og:title" content="공항 셔츠룸 정보 | 진짜를 원한다면">
+  <meta property="og:description" content="공항 셔츠룸의 모든 것. 입지, 서비스, 가격, 그리고 진짜 스타일을 원하는 당신을 위한 정보.">
+  <title>공항 셔츠룸 정보 | 진짜를 원한다면</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+      background-color: #f5f3ef;
+      color: #1a1a1a;
+      line-height: 1.6;
+    }
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+    header {
+      background-color: #1a1a1a;
+      padding: 12px 0;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      border-bottom: 2px solid #c9a96e;
+    }
+    .header-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+    .logo {
+      font-size: 1.5rem;
+      font-weight: 800;
+      color: #f5f3ef;
+      text-decoration: none;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+    }
+    .logo:hover {
+      color: #c9a96e;
+    }
+    nav {
+      display: flex;
+      gap: 30px;
+      align-items: center;
+    }
+    nav a {
+      color: #f5f3ef;
+      text-decoration: none;
+      font-size: 0.9rem;
+      font-weight: 600;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      transition: color 0.2s;
+    }
+    nav a:hover {
+      color: #c9a96e;
+    }
+    .cta-nav {
+      background-color: #c9a96e;
+      color: #1a1a1a !important;
+      padding: 8px 20px;
+      border-radius: 4px;
+      font-weight: 700;
+    }
+    .cta-nav:hover {
+      background-color: #b8944f;
+      color: #1a1a1a !important;
+    }
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      cursor: pointer;
+      background: none;
+      border: none;
+      padding: 5px;
+    }
+    .hamburger span {
+      display: block;
+      width: 28px;
+      height: 3px;
+      background-color: #f5f3ef;
+      border-radius: 2px;
+    }
+    .mobile-menu {
+      display: none;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      right: 0;
+      background-color: #1a1a1a;
+      padding: 20px;
+      flex-direction: column;
+      gap: 15px;
+      border-bottom: 2px solid #c9a96e;
+    }
+    .mobile-menu a {
+      color: #f5f3ef;
+      text-decoration: none;
+      font-size: 1rem;
+      font-weight: 600;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+    }
+    .mobile-menu .cta-nav {
+      display: inline-block;
+      text-align: center;
+    }
+    @media (max-width: 768px) {
+      nav {
+        display: none;
+      }
+      .hamburger {
+        display: flex;
+      }
+      .mobile-menu.active {
+        display: flex;
+      }
+    }
+    .hero {
+      padding: 80px 0 60px;
+      text-align: center;
+      background: linear-gradient(135deg, #1a1a1a 0%, #2a2a2a 100%);
+      color: #f5f3ef;
+    }
+    .hero h1 {
+      font-size: 3rem;
+      font-weight: 900;
+      letter-spacing: -1px;
+      margin-bottom: 20px;
+      text-transform: uppercase;
+    }
+    .hero h1 span {
+      color: #c9a96e;
+    }
+    .hero p {
+      font-size: 1.2rem;
+      max-width: 700px;
+      margin: 0 auto;
+      opacity: 0.9;
+      font-weight: 300;
+    }
+    .section {
+      padding: 60px 0;
+    }
+    .section-title {
+      font-size: 2rem;
+      font-weight: 800;
+      margin-bottom: 40px;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      border-left: 4px solid #c9a96e;
+      padding-left: 15px;
+    }
+    .grid-2 {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
+    }
+    .info-card {
+      background: #fff;
+      padding: 35px;
+      border-radius: 8px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+      border: 1px solid #e8e3dc;
+    }
+    .info-card h3 {
+      font-size: 1.4rem;
+      font-weight: 700;
+      margin-bottom: 15px;
+      color: #1a1a1a;
+      text-transform: uppercase;
+    }
+    .info-card h3 .accent {
+      color: #c9a96e;
+    }
+    .info-card p {
+      margin-bottom: 15px;
+      color: #444;
+      line-height: 1.7;
+    }
+    .info-card ul {
+      list-style: none;
+      padding: 0;
+    }
+    .info-card ul li {
+      padding: 8px 0;
+      border-bottom: 1px solid #f0ede8;
+      color: #444;
+    }
+    .info-card ul li:before {
+      content: "▸ ";
+      color: #c9a96e;
+      font-weight: 700;
+    }
+    .highlight-box {
+      background: #1a1a1a;
+      color: #f5f3ef;
+      padding: 40px;
+      border-radius: 8px;
+      margin: 40px 0;
+      border-left: 5px solid #c9a96e;
+    }
+    .highlight-box h3 {
+      font-size: 1.8rem;
+      font-weight: 800;
+      margin-bottom: 15px;
+      text-transform: uppercase;
+    }
+    .highlight-box p {
+      font-size: 1.1rem;
+      opacity: 0.9;
+    }
+    .highlight-box .tel-big {
+      display: inline-block;
+      font-size: 2rem;
+      font-weight: 900;
+      color: #c9a96e;
+      margin-top: 15px;
+      text-decoration: none;
+      letter-spacing: 2px;
+    }
+    .faq-item {
+      background: #fff;
+      padding: 25px 30px;
+      margin-bottom: 15px;
+      border-radius: 6px;
+      border: 1px solid #e8e3dc;
+    }
+    .faq-item h4 {
+      font-size: 1.1rem;
+      font-weight: 700;
+      margin-bottom: 10px;
+      color: #1a1a1a;
+    }
+    .faq-item h4 .q {
+      color: #c9a96e;
+      margin-right: 8px;
+    }
+    .faq-item p {
+      color: #555;
+      line-height: 1.6;
+    }
+    .btn-main {
+      display: inline-block;
+      background-color: #c9a96e;
+      color: #1a1a1a;
+      padding: 14px 40px;
+      text-decoration: none;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      border-radius: 4px;
+      transition: all 0.3s;
+      border: none;
+      cursor: pointer;
+      font-size: 1rem;
+    }
+    .btn-main:hover {
+      background-color: #b8944f;
+      transform: translateY(-2px);
+    }
+    .text-center {
+      text-align: center;
+    }
+    .mt-40 {
+      margin-top: 40px;
+    }
+    .mb-20 {
+      margin-bottom: 20px;
+    }
+    footer {
+      background-color: #1a1a1a;
+      color: #f5f3ef;
+      padding: 30px 0;
+      text-align: center;
+      border-top: 2px solid #c9a96e;
+    }
+    footer p {
+      opacity: 0.7;
+      font-size: 0.9rem;
+    }
+    footer a {
+      color: #c9a96e;
+      text-decoration: none;
+    }
+    @media (max-width: 768px) {
+      .hero h1 {
+        font-size: 2rem;
+      }
+      .grid-2 {
+        grid-template-columns: 1fr;
+      }
+      .info-card {
+        padding: 25px;
+      }
+      .highlight-box {
+        padding: 25px;
+      }
+      .highlight-box .tel-big {
+        font-size: 1.5rem;
+      }
+    }
+  </style>
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+</head>
+<body>
+  <header>
+    <div class="header-inner">
+      <a href="/" class="logo">공항 셔츠룸</a>
+      <nav>
+        <a href="/">홈</a>
+        <a href="/lookbook">룩북</a>
+        <a href="/info" style="color:#c9a96e;">정보</a>
+        <a href="/gallery">갤러리</a>
+        <a href="/review">리뷰</a>
+        <a href="tel:010-6279-0862" class="cta-nav">전화문의</a>
+      </nav>
+      <button class="hamburger" onclick="document.querySelector('.mobile-menu').classList.toggle('active')">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+    <div class="mobile-menu">
+      <a href="/">홈</a>
+      <a href="/lookbook">룩북</a>
+      <a href="/info">정보</a>
+      <a href="/gallery">갤러리</a>
+      <a href="/review">리뷰</a>
+      <a href="tel:010-6279-0862" class="cta-nav">전화문의</a>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="container">
+      <h1>진짜를 원한다면, <span>정보를 가져라</span></h1>
+      <p>공항 셔츠룸. 입지, 서비스, 가격. 모든 걸 투명하게 공개한다. 당신이 선택할 이유는 단 하나, 결과물이 증명한다.</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <h2 class="section-title">왜 공항인가</h2>
+      <div class="grid-2">
+        <div class="info-card">
+          <h3><span class="accent">LOCATION</span> · 입지의 힘</h3>
+          <p>공항 직통, 접근성 끝판왕. 서울 어디서든 30분이면 도착. 번화가의 노이즈는 없다. 오직 집중과 프라이빗함만.</p>
+          <ul>
+            <li>인천국제공항 20분 거리</li>
+            <li>김포공항 15분 거리</li>
+            <li>전용 셔틀 서비스 운영</li>
+            <li>발렛 파킹 무료</li>
+          </ul>
+        </div>
+        <div class="info-card">
+          <h3><span class="accent">SERVICE</span> · 완벽을 넘어서</h3>
+          <p>단순한 셔츠룸이 아니다. 당신의 스타일을 재정의하는 공간. 1:1 퍼스널 컨설팅부터 시그니처 핏 피팅까지.</p>
+          <ul>
+            <li>VIP 전용 라운지 운영</li>
+            <li>시그니처 셔츠 50+ 핏 보유</li>
+            <li>맞춤 제작 서비스 (7일 완성)</li>
+            <li>음료 및 스낵 무제한</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" style="padding-top:0;">
+    <div class="container">
+      <div class="highlight-box">
+        <h3>PRICE · 정직함이 곧 파격</h3>
+        <p>시중의 뻔한 가격표는 없다. 우리는 결과물에 집중한다. 당신이 지불하는 돈은 단 하나, 퀄리티에 대한 투자다.</p>
+        <p style="margin-top:15px;">기본 셔츠 대여 : 50,000원 ~ / 맞춤 제작 : 150,000원 ~ / VIP 패키지 : 300,000원 ~</p>
+        <p style="margin-top:10px;">전화 한 통이면 모든 게 해결된다.</p>
+        <a href="tel:010-6279-0862" class="tel-big">010-6279-0862</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" style="background:#e8e3dc;">
+    <div class="container">
+      <h2 class="section-title">자주 묻는 질문</h2>
+      <div class="faq-item">
+        <h4><span class="q">Q.</span> 예약은 필수인가요?</h4>
+        <p>필수는 아니지만, 전화 예약 시 대기 시간 없이 바로 입장 가능합니다. 특히 주말은 필수 예약을 권장합니다.</p>
+      </div>
+      <div class="faq-item">
+        <h4><span class="q">Q.</span> 셔츠 사이즈가 다양하나요?</h4>
+        <p>XS부터 4XL까지 모든 체형을 커버합니다. 또한 현장에서 즉시 피팅 후 교환 가능합니다. 못 믿겠으면 와서 입어봐.</p>
+      </div>
+      <div class="faq-item">
+        <h4><span class="q">Q.</span> 맞춤 제작은 얼마나 걸리나요?</h4>
+        <p>기본 7일. 급하면 3일도 가능하다. 단, 추가 비용 발생. 모든 건 속도보다 퀄리티가 우선이다.</p>
+      </div>
+      <div class="faq-item">
+        <h4><span class="q">Q.</span> 주차는 어떻게 하나요?</h4>
+        <p>전용 지하 주차장 완비. 발렛 서비스 무료. 걸어서 1분이면 입장이다. 차 키만 맡겨라.</p>
+      </div>
+      <div class="text-center mt-40">
+        <a href="tel:010-6279-0862" class="btn-main">지금 전화 걸기</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <h2 class="section-title">오시는 길</h2>
+      <div class="grid-2">
+        <div class="info-card">
+          <h3><span class="accent">ADDRESS</span> · 주소</h3>
+          <p>인천광역시 중구 공항로 123<br>공항 셔츠룸 빌딩 2층</p>
+          <p style="margin-top:10px;"><strong>운영시간</strong><br>월~토 : 10:00 ~ 22:00<br>일요일 : 12:00 ~ 20:00</p>
+        </div>
+        <div class="info-card">
+          <h3><span class="accent">CONTACT</span> · 연락처</h
+</body>
+</html>

@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="bpaas-design-system" content="editorial-apple">
+    <meta name="bpaas-design-theme" content="kr-warm-grid">
+    <meta name="description" content="공항 셔츠룸 룩북 블로그: 진짜 남자의 스타일은 핏에서 시작된다. 파격적인 디자인 철학과 완벽한 실루엣의 비밀을 파헤치다.">
+    <meta name="keywords" content="공항 셔츠룸, 공항 셔츠룸 룩북, 셔츠룸, 공항룩북, 남성셔츠, 스타일링, 브로 페르소나, 블로그">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://t3b08-gh-shirts-look.vercel.app/blog">
+    <meta property="og:title" content="공항 셔츠룸 룩북 블로그 | 핏의 법칙">
+    <meta property="og:description" content="진짜 남자의 스타일은 핏에서 시작된다. 공항 셔츠룸이 말하는 완벽한 실루엣의 조건.">
+    <title>블로그 | 공항 셔츠룸 룩북</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            background-color: #faf9f6;
+            color: #1a1a1a;
+            line-height: 1.6;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        /* 헤더 & 네비게이션 */
+        header {
+            background-color: #ffffff;
+            border-bottom: 1px solid #e5e5e5;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            background-color: rgba(255, 255, 255, 0.92);
+        }
+
+        .header-inner {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 64px;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        .logo {
+            font-size: 1.25rem;
+            font-weight: 700;
+            letter-spacing: -0.02em;
+            text-decoration: none;
+            color: #1a1a1a;
+        }
+
+        .logo:hover {
+            opacity: 0.7;
+        }
+
+        nav {
+            display: flex;
+            gap: 32px;
+            align-items: center;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #1a1a1a;
+            font-size: 0.9rem;
+            font-weight: 500;
+            letter-spacing: 0.02em;
+            transition: opacity 0.2s;
+        }
+
+        nav a:hover {
+            opacity: 0.6;
+        }
+
+        .cta-nav {
+            background-color: #1a1a1a;
+            color: #ffffff !important;
+            padding: 8px 20px;
+            border-radius: 100px;
+            font-weight: 600;
+            font-size: 0.85rem;
+        }
+
+        .cta-nav:hover {
+            background-color: #333333;
+            opacity: 1 !important;
+        }
+
+        /* 햄버거 */
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            gap: 5px;
+            cursor: pointer;
+            padding: 4px;
+            border: none;
+            background: none;
+        }
+
+        .hamburger span {
+            display: block;
+            width: 24px;
+            height: 2px;
+            background-color: #1a1a1a;
+            border-radius: 2px;
+            transition: all 0.3s ease;
+        }
+
+        .mobile-menu {
+            display: none;
+            position: fixed;
+            top: 64px;
+            left: 0;
+            width: 100%;
+            height: calc(100vh - 64px);
+            background-color: #ffffff;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 32px;
+            z-index: 99;
+        }
+
+        .mobile-menu a {
+            text-decoration: none;
+            color: #1a1a1a;
+            font-size: 1.25rem;
+            font-weight: 500;
+        }
+
+        .mobile-menu .cta-nav {
+            font-size: 1rem;
+            padding: 12px 32px;
+        }
+
+        /* 반응형 */
+        @media (max-width: 768px) {
+            nav {
+                display: none;
+            }
+            .hamburger {
+                display: flex;
+            }
+            .mobile-menu.active {
+                display: flex;
+            }
+        }
+
+        /* 메인 콘텐츠 */
+        .blog-hero {
+            padding: 80px 0 40px;
+            text-align: center;
+        }
+
+        .blog-hero h1 {
+            font-size: 3rem;
+            font-weight: 800;
+            letter-spacing: -0.03em;
+            line-height: 1.1;
+            margin-bottom: 16px;
+        }
+
+        .blog-hero p {
+            font-size: 1.15rem;
+            color: #555;
+            max-width: 640px;
+            margin: 0 auto;
+        }
+
+        .blog-meta {
+            display: flex;
+            justify-content: center;
+            gap: 16px;
+            margin-top: 24px;
+            font-size: 0.85rem;
+            color: #888;
+        }
+
+        .blog-meta span {
+            display: flex;
+            align-items: center;
+            gap: 4px;
+        }
+
+        .blog-featured-image {
+            width: 100%;
+            height: 400px;
+            background-color: #e8e5df;
+            border-radius: 16px;
+            margin: 40px 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #888;
+            font-size: 1rem;
+            background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="60" height="60" viewBox="0 0 24 24" fill="none" stroke="%23999" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><circle cx="8.5" cy="8.5" r="1.5"></circle><polyline points="21 15 16 10 5 21"></polyline></svg>');
+            background-size: 60px;
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+
+        .blog-content {
+            max-width: 720px;
+            margin: 0 auto;
+            padding-bottom: 80px;
+        }
+
+        .blog-content h2 {
+            font-size: 1.75rem;
+            font-weight: 700;
+            margin-top: 48px;
+            margin-bottom: 16px;
+            letter-spacing: -0.02em;
+        }
+
+        .blog-content h3 {
+            font-size: 1.25rem;
+            font-weight: 600;
+            margin-top: 32px;
+            margin-bottom: 12px;
+        }
+
+        .blog-content p {
+            font-size: 1.05rem;
+            color: #333;
+            margin-bottom: 20px;
+            line-height: 1.8;
+        }
+
+        .blog-content blockquote {
+            border-left: 4px solid #1a1a1a;
+            padding-left: 20px;
+            margin: 32px 0;
+            font-style: italic;
+            font-size: 1.15rem;
+            color: #444;
+        }
+
+        .blog-content ul {
+            margin: 20px 0;
+            padding-left: 24px;
+        }
+
+        .blog-content ul li {
+            margin-bottom: 12px;
+            font-size: 1.05rem;
+            color: #333;
+        }
+
+        .blog-cta-box {
+            background-color: #1a1a1a;
+            color: #ffffff;
+            padding: 40px 32px;
+            border-radius: 16px;
+            margin-top: 48px;
+            text-align: center;
+        }
+
+        .blog-cta-box h3 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 12px;
+            color: #ffffff;
+        }
+
+        .blog-cta-box p {
+            color: #cccccc;
+            margin-bottom: 20px;
+        }
+
+        .blog-cta-box .cta-button {
+            display: inline-block;
+            background-color: #ffffff;
+            color: #1a1a1a;
+            padding: 12px 32px;
+            border-radius: 100px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.95rem;
+            transition: background-color 0.2s;
+        }
+
+        .blog-cta-box .cta-button:hover {
+            background-color: #e5e5e5;
+        }
+
+        /* 푸터 */
+        footer {
+            border-top: 1px solid #e5e5e5;
+            padding: 32px 0;
+            text-align: center;
+            font-size: 0.85rem;
+            color: #888;
+        }
+
+        footer a {
+            color: #1a1a1a;
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+        @media (max-width: 768px) {
+            .blog-hero h1 {
+                font-size: 2rem;
+            }
+            .blog-hero p {
+                font-size: 1rem;
+            }
+            .blog-featured-image {
+                height: 240px;
+            }
+            .blog-content h2 {
+                font-size: 1.4rem;
+            }
+        }
+    </style>
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+</head>
+<body>
+    <header>
+        <div class="header-inner">
+            <a href="/" class="logo">공항 셔츠룸</a>
+            <nav>
+                <a href="/">홈</a>
+                <a href="/lookbook">룩북</a>
+                <a href="/about">소개</a>
+                <a href="/blog">블로그</a>
+                <a href="/contact" class="cta-nav">문의하기</a>
+            </nav>
+            <button class="hamburger" id="hamburger" aria-label="메뉴 열기">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+        <div class="mobile-menu" id="mobileMenu">
+            <a href="/">홈</a>
+            <a href="/lookbook">룩북</a>
+            <a href="/about">소개</a>
+            <a href="/blog">블로그</a>
+            <a href="/contact" class="cta-nav">문의하기</a>
+        </div>
+    </header>
+
+    <main>
+        <div class="container">
+            <section class="blog-hero">
+                <h1>핏의 법칙: <br>완벽한 셔츠가 당신을 바꾼다</h1>
+                <p>대부분의 남자가 셔츠를 고를 때 저지르는 치명적인 실수. 공항 셔츠룸이 말하는 진짜 핏의 기준.</p>
+                <div class="blog-meta">
+                    <span>✏️ 공항 셔츠룸 에디터</span>
+                    <span>📅 2025년 3월 24일</span>
+                    <span>📖 6분 읽기</span>
+                </div>
+            </section>
+
+            <div class="blog-featured-image"></div>
+
+            <article class="blog-content">
+                <p>솔직히 말해서, 대부분의 남자는 셔츠를 입는 법을 몰라. 아니, 알고 있다고 착각하고 있어. 백화점에서 "이거 잘 어울리네요"라는 말에 현혹되어 카드를 꺼내는 순간, 당신은 이미 패배한 거야.</p>
+
+                <p>셔츠는 그냥 옷이 아니야. 그것은 당신의 첫인상이자, 당신이 누구인지를 말해주는 선언문이야. 그리고 그 선언문이 '평범함'을 말하고 있다면, 당신은 이미 군중 속에 묻혀버린 거지.</p>
+
+                <blockquote>
+                    "완벽한 핏은 타협하지 않는 태도에서 나온다. 당신의 몸을 알지 못하면, 어떤 셔츠도 당신을 살려주지 않는다."
+                </blockquote>
+
+                <h2>어깨: 모든 것의 시작</h2>
+                <p>셔츠의 핏을 결정짓는 가장 중요한 포인트는 어깨 솔기야. 솔기가 어깨뼈 바깥으로 떨어지면? 헐렁해 보여. 안쪽으로 파고들면? 쥐어짜는 꼴이지. 정확히 어깨뼈 끝에 딱 맞아떨어져야 해. 이게 기본이야. 이걸 못 맞추면 나머지는 의미 없어.</p>
+
+                <p>공항 셔츠룸의 모든 셔츠는 이 원칙에 기반해 설계됐어. 우리는 타협하지 않아. 당신이 타협하지 않기를 바라니까.</p>
+
+                <h2>목둘레와 소매: 디테일이 만드는 차이</h2>
+                <p>단추를 다 채웠을 때 목에 손가락 하나가 들어가는 정도가 딱이야. 너무 조이면 질식하는 것처럼 보이고, 너무 헐거우면 넥타이가 삐뚤어져 보여. 소매는 손목뼈 바로 아래까지 내려와야 하고, 재킷을 입었을 때 1cm 정도만 살짝 보이는 게 정석이지.</p>
+
+                <p>이런 디테일 하나하나가 쌓여서 '아는 놈'과 '모르는 놈'을 가르는 거야. 세상은 디테일을 본다고? 아니, 세상은 디테일을 <em>느껴</em>. 당신이 신경 쓰지 않은 그 1cm가 당신을 평가하는 기준이 되는 거야.</p>
+
+                <h2>가슴과 허리: 실루엣의 완성</h2>
+                <p>가슴은 여유 있게, 허리는 딱 맞게. 이게 왜 어려운데? 기성복은 대부분 이걸 무시하고 만들어져. 가슴에 맞추면 허리가 남아돌고, 허리에 맞추면 가슴이 터질 것 같고. 그래서 우리는 존재해. 공항 셔츠룸의 컷은 이 딜레마를 해결하기 위해 태어났어.</p>
+
+                <p>단추를 채웠을 때 가슴 부분이 팽팽하지 않으면서도, 허리선이 자연스럽게 들어가 있는. 그게 바로 '핏'이야. 몸을 감싸지만 조이지 않고, 실루엣을 살리지만 과장되지 않는. 이 미묘한 균형이 진짜 고수의 영역이지.</p>
+
+                <h2>결론: 핏이 전부다</h2>
+                <p>셔츠의 원단이 아무리 좋아도, 브랜드가 아무리 유명해도, 핏이 엉망이면 그냥 헌 옷이야. 반대로 핏이 완벽하면, 5만 원짜리 셔츠도 50만 원처럼 보여. 이게 현실이야.</p>
+
+                <p>공항 셔츠룸은 그 현실을 정면으로 마주했어. 우리는 당신이 거울 앞에서 "오늘 뭘 입지?" 고민하는 시간을 없애주기 위해 존재해. 단 하나의 선택으로 당신의 스타일을 완성할 수 있다면, 그게 바로 우리의 셔츠인 거야.</p>
+
+                <p>지금 당장 핏을 점검해. 그리고 진짜를 경험해.</p>
+
+                <div class="blog-cta-box">
+                    <h3>진짜 핏을 경험할 준비가 됐나?</h3>
+                    <p>공항 셔츠룸의 셔츠는 당신의 몸을 다시 생각하게 만든다.</p>
+                    <a href="/lookbook" class="cta-button">룩북 보러 가기</a>
+                </div>
+            </article>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>공항 셔츠룸 | 대표: 김스타일 | 사업자등록번호: 123-45-67890</p>
+            <p>전화: <a href="tel:010627908
+</body>
+</html>
